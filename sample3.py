@@ -1,7 +1,6 @@
 import datetime
 
 class Employee:
-    num_of_emps = 0
     raise_amt  = 1.04
 
     def __init__(self,first, last, pay):
@@ -9,8 +8,6 @@ class Employee:
         self.last = last
         self.pay = pay
         self.email = first + '.' + last + '@company.com'
-
-        Employee.num_of_emps += 1
 
     def fullname(self):
         return '{} {}'.format(self.first, self.last)
@@ -26,8 +23,6 @@ class Employee:
     def from_string(cls,emp_str):
         first, last, pay = emp_str.split('-')
         return cls(first, last, pay)
-
-
 
     @staticmethod
     def is_workday(day):
