@@ -5,6 +5,10 @@ class Node:
     def __init__(self,data_value=None):
         self.data_value=data_value
         self.next_value=None
+        self.pre_value=None
+        self.down_value=None
+    def setNextValue(self,next_node):
+        self.next_value=next_node
 
 class aLinkedList:
     def __init__(self):
@@ -20,11 +24,12 @@ class aLinkedList:
 if __name__=='__main__' :
     alist = aLinkedList()
     alist.head_value = Node("Mon")
-    e2 = Node("Tue") ; e3 = Node("Wed")
+    e2 = Node("Tue")
+    e3 = Node("Wed")
 
-    alist.head_value.next_value = e2
+    alist.head_value.setNextValue(e2)
 
     if e2.next_value is  None:
-        e2.next_value = e3
+        e2.setNextValue(e3)
 
     alist.print_list()
