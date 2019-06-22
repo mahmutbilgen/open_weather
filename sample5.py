@@ -21,6 +21,7 @@ class Developer(Employee):
 
     def __init__(self, first, last, pay, prog_lang):
         super().__init__(first, last, pay)           #  Setting params in subclass - option 1
+        #Employee.__init__(self, first, last, pay)    #  Setting params in subclass - option 2
         self.prog_lang  = prog_lang
 
 class Manager(Employee):
@@ -44,8 +45,8 @@ class Manager(Employee):
             print('-->', emp.fullname())
 
 
-dev_1 = Developer ('Mahoni','Kemble' , 50000, 'python' )
-dev_2 = Developer ('Test','User' ,60000, 'java' )
+dev_1 = Develo per ('Mahoni','Kemble' , 50000, 'Python' )
+dev_2 = Developer ('Test','User' ,60000, 'Java' )
 
 mgr_1 = Manager('Sue', 'Smith', 90000,[dev_1])
 

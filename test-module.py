@@ -1,7 +1,12 @@
-##
-##  It is Python OOP Tutorial 6: Property Decorators
-#  - Getters, Setters, and Deleterss usage and subclass usage
-##
+'''
+ A sample Employee class
+
+'''
+
+import sys
+print (sys.executable)
+print(sys.version)
+
 class Employee:
     raise_amt  = 1.04
 
@@ -39,16 +44,3 @@ emp_1.fullname = 'Corey Schafer'
 print(emp_1.first)
 print(emp_1.email)
 print(emp_1.fullname)
-
-del emp_1.fullname
-
-print(emp_1.first)
-print(emp_1.email)
-print(emp_1.fullname)
-
-
-# emp_2 = Employee ('Test','User')
-
-
-# print("Employee Name lenght : {}".format(emp_1.__len__()))
-# print(emp_1.__repr__())
