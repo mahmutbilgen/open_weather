@@ -1,0 +1,257 @@
+Python 3.7.3 (default, Mar 27 2019, 16:54:48) 
+[Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> 2 - 4
+-2
+>>> # REPL - Read, evaluate, print, loop
+>>> print("hello world")
+hello world
+>>> # purple - built-in function
+>>> def add(x, y):
+	return x + y
+
+>>> add(4, 5)
+9
+>>> # orange - keyword, syntax
+>>> print
+<built-in function print>
+>>> def add(x, y):
+	return x + y
+
+>>> 
+ RESTART: /Users/matt/Dropbox/work/training/metasnake/2019-07-17-ora-begpy/markov.py 
+>>> m = Markov('ab')
+>>> m
+<__main__.Markov object at 0x103db98d0>
+>>> m.predict('a')
+'b'
+>>> 
+ RESTART: /Users/matt/Dropbox/work/training/metasnake/2019-07-17-ora-begpy/markov.py 
+>>> m = Markov('ab')
+Traceback (most recent call last):
+  File "<pyshell#15>", line 1, in <module>
+    m = Markov('ab')
+TypeError: Markov() takes no arguments
+>>> 
+ RESTART: /Users/matt/Dropbox/work/training/metasnake/2019-07-17-ora-begpy/markov.py 
+>>> dir()
+['__annotations__', '__builtins__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'darkov']
+>>> m = Markov('ab')
+Traceback (most recent call last):
+  File "<pyshell#17>", line 1, in <module>
+    m = Markov('ab')
+NameError: name 'Markov' is not defined
+>>> m..predict('a')
+SyntaxError: invalid syntax
+>>> m.predict('a')
+Traceback (most recent call last):
+  File "<pyshell#19>", line 1, in <module>
+    m.predict('a')
+NameError: name 'm' is not defined
+>>> 
+ RESTART: /Users/matt/Dropbox/work/training/metasnake/2019-07-17-ora-begpy/markov.py 
+>>> m = Markov('ab')
+>>> m.predict('a')
+'b'
+>>> a = 2
+>>> type(2)
+<class 'int'>
+>>> type(a)
+<class 'int'>
+>>> dir(a)
+['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '__class__', '__delattr__', '__dir__', '__divmod__', '__doc__', '__eq__', '__float__', '__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getnewargs__', '__gt__', '__hash__', '__index__', '__init__', '__init_subclass__', '__int__', '__invert__', '__le__', '__lshift__', '__lt__', '__mod__', '__mul__', '__ne__', '__neg__', '__new__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__round__', '__rpow__', '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__', '__trunc__', '__xor__', 'bit_length', 'conjugate', 'denominator', 'from_bytes', 'imag', 'numerator', 'real', 'to_bytes']
+>>> words = {}
+>>> words['cat'] = 'furry feline'
+>>> words['apple'] = 'crunchy fruit'
+>>> # cat - key
+>>> # furry feline - value
+>>> hash('cat')
+-2290798591557649608
+>>> hash('cat') % 20
+12
+>>> hash('apple') % 20
+4
+>>> words['cat']
+'furry feline'
+>>> words['dog']
+Traceback (most recent call last):
+  File "<pyshell#35>", line 1, in <module>
+    words['dog']
+KeyError: 'dog'
+>>> words.get('dog', 'missing')
+'missing'
+>>> dir(words)
+['__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']
+>>> help(words.get)
+Help on built-in function get:
+
+get(key, default=None, /) method of builtins.dict instance
+    Return the value for key if key is in the dictionary, else default.
+
+>>> words.get('cat', 'missing')
+'furry feline'
+>>> name = 'matthew'
+>>> name[0]
+'m'
+>>> name[1]
+'a'
+>>> name[2]
+'t'
+>>> name[3]
+'t'
+>>> name[6]
+'w'
+>>> name[7
+     ]
+Traceback (most recent call last):
+  File "<pyshell#47>", line 1, in <module>
+    name[7
+IndexError: string index out of range
+>>> name
+'matthew'
+>>> len(name)
+7
+>>> range(7)
+range(0, 7)
+>>> list(range(7))
+[0, 1, 2, 3, 4, 5, 6]
+>>> # half-interval
+>>> 
+ RESTART: /Users/matt/Dropbox/work/training/metasnake/2019-07-17-ora-begpy/markov.py 
+>>> get_table('ab')
+Traceback (most recent call last):
+  File "<pyshell#53>", line 1, in <module>
+    get_table('ab')
+  File "/Users/matt/Dropbox/work/training/metasnake/2019-07-17-ora-begpy/markov.py", line 25, in get_table
+    out = text[i+1]
+IndexError: string index out of range
+>>> 
+ RESTART: /Users/matt/Dropbox/work/training/metasnake/2019-07-17-ora-begpy/markov.py 
+>>> get_table('ab')
+0 a
+1 b
+Traceback (most recent call last):
+  File "<pyshell#54>", line 1, in <module>
+    get_table('ab')
+  File "/Users/matt/Dropbox/work/training/metasnake/2019-07-17-ora-begpy/markov.py", line 26, in get_table
+    out = text[i+1]
+IndexError: string index out of range
+>>> 'ab'[2]
+Traceback (most recent call last):
+  File "<pyshell#55>", line 1, in <module>
+    'ab'[2]
+IndexError: string index out of range
+>>> 
+ RESTART: /Users/matt/Dropbox/work/training/metasnake/2019-07-17-ora-begpy/markov.py 
+>>> get_table('ab')
+0 a
+1 b
+{'a': {'b': 1}}
+>>> 
+ RESTART: /Users/matt/Dropbox/work/training/metasnake/2019-07-17-ora-begpy/markov.py 
+>>> get_table('ab')
+{'a': {'b': 1}}
+>>> name = 'matt'
+>>> name
+'matt'
+>>> del name
+>>> name
+Traceback (most recent call last):
+  File "<pyshell#61>", line 1, in <module>
+    name
+NameError: name 'name' is not defined
+>>> get_table('abacab')
+{'a': {'b': 2, 'c': 1}, 'b': {'a': 1}, 'c': {'a': 1}}
+>>> get_table('ab')
+{'a': {'b': 1}}
+>>> 
+ RESTART: /Users/matt/Dropbox/work/training/metasnake/2019-07-17-ora-begpy/markov.py 
+>>> get_table('abacab')
+{'a': {'b': 1}}
+>>> 
+ RESTART: /Users/matt/Dropbox/work/training/metasnake/2019-07-17-ora-begpy/markov.py 
+>>> 
+ RESTART: /Users/matt/Dropbox/work/training/metasnake/2019-07-17-ora-begpy/markov.py 
+>>> get_table('abacab')
+{'a': {'b': 2, 'c': 1}, 'b': {'a': 1}, 'c': {'a': 1}}
+>>> help({}.setdefault)
+Help on built-in function setdefault:
+
+setdefault(key, default=None, /) method of builtins.dict instance
+    Insert key with a value of default if key is not in the dictionary.
+    
+    Return the value for key if key is in the dictionary, else default.
+
+>>> 
+ RESTART: /Users/matt/Dropbox/work/training/metasnake/2019-07-17-ora-begpy/markov.py 
+>>> get_table('abacab')
+{'a': {'b': 2, 'c': 1}, 'b': {'a': 1}, 'c': {'a': 1}}
+>>> get_table('aaaa')
+{'a': {'a': 3}}
+>>> get_table('aaaad')
+{'a': {'a': 3, 'd': 1}}
+>>> names = []
+>>> names = [] # list literal
+>>> dir(names)
+['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> help(names.append)
+Help on built-in function append:
+
+append(object, /) method of builtins.list instance
+    Append object to the end of the list.
+
+>>> names.append('suzy')
+>>> names
+['suzy']
+>>> names.append('matt')
+>>> names
+['suzy', 'matt']
+>>> 
+ RESTART: /Users/matt/Dropbox/work/training/metasnake/2019-07-17-ora-begpy/markov.py 
+>>> m = Markov('ab')
+>>> m.predict('a')
+Traceback (most recent call last):
+  File "<pyshell#79>", line 1, in <module>
+    m.predict('a')
+  File "/Users/matt/Dropbox/work/training/metasnake/2019-07-17-ora-begpy/markov.py", line 24, in predict
+    return random.choice(possibles)
+NameError: name 'random' is not defined
+>>> dir()
+['Markov', '__annotations__', '__builtins__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'get_table', 'm']
+>>> dir(__builtins__)
+['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException', 'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning', 'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError', 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning', 'EOFError', 'Ellipsis', 'EnvironmentError', 'Exception', 'False', 'FileExistsError', 'FileNotFoundError', 'FloatingPointError', 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError', 'ImportWarning', 'IndentationError', 'IndexError', 'InterruptedError', 'IsADirectoryError', 'KeyError', 'KeyboardInterrupt', 'LookupError', 'MemoryError', 'ModuleNotFoundError', 'NameError', 'None', 'NotADirectoryError', 'NotImplemented', 'NotImplementedError', 'OSError', 'OverflowError', 'PendingDeprecationWarning', 'PermissionError', 'ProcessLookupError', 'RecursionError', 'ReferenceError', 'ResourceWarning', 'RuntimeError', 'RuntimeWarning', 'StopAsyncIteration', 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError', 'SystemExit', 'TabError', 'TimeoutError', 'True', 'TypeError', 'UnboundLocalError', 'UnicodeDecodeError', 'UnicodeEncodeError', 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning', 'ValueError', 'Warning', 'ZeroDivisionError', '_', '__build_class__', '__debug__', '__doc__', '__import__', '__loader__', '__name__', '__package__', '__spec__', 'abs', 'all', 'any', 'ascii', 'bin', 'bool', 'breakpoint', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'compile', 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec', 'exit', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property', 'quit', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
+>>> 
+ RESTART: /Users/matt/Dropbox/work/training/metasnake/2019-07-17-ora-begpy/markov.py 
+>>> m = Markov('ab')
+>>> m.predict('a')
+'b'
+>>> m2 = Markov('find a city find yourself a city to live in')
+>>> m2.predict('f')
+'i'
+>>> m2.predict('i')
+'t'
+>>> m2.table['i']
+{'n': 3, 't': 2, 'v': 1}
+>>> m2.predict('z')
+Traceback (most recent call last):
+  File "<pyshell#88>", line 1, in <module>
+    m2.predict('z')
+  File "/Users/matt/Dropbox/work/training/metasnake/2019-07-17-ora-begpy/markov.py", line 19, in predict
+    raise KeyError(f'{data} not in training')
+KeyError: 'z not in training'
+>>> get_table('find a city find yourself a city to live in')
+{'f': {'i': 2, ' ': 1}, 'i': {'n': 3, 't': 2, 'v': 1}, 'n': {'d': 2}, 'd': {' ': 2}, ' ': {'a': 2, 'c': 2, 'f': 1, 'y': 1, 't': 1, 'l': 1, 'i': 1}, 'a': {' ': 2}, 'c': {'i': 2}, 't': {'y': 2, 'o': 1}, 'y': {' ': 2, 'o': 1}, 'o': {'u': 1, ' ': 1}, 'u': {'r': 1}, 'r': {'s': 1}, 's': {'e': 1}, 'e': {'l': 1, ' ': 1}, 'l': {'f': 1, 'i': 1}, 'v': {'e': 1}}
+>>> m2.predict('in')
+Traceback (most recent call last):
+  File "<pyshell#90>", line 1, in <module>
+    m2.predict('in')
+  File "/Users/matt/Dropbox/work/training/metasnake/2019-07-17-ora-begpy/markov.py", line 19, in predict
+    raise KeyError(f'{data} not in training')
+KeyError: 'in not in training'
+>>> m
+<__main__.Markov object at 0x1078e76d8>
+>>> m.table
+{'a': {'b': 1}}
+>>> dir(__builtins__)
+['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException', 'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning', 'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError', 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning', 'EOFError', 'Ellipsis', 'EnvironmentError', 'Exception', 'False', 'FileExistsError', 'FileNotFoundError', 'FloatingPointError', 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError', 'ImportWarning', 'IndentationError', 'IndexError', 'InterruptedError', 'IsADirectoryError', 'KeyError', 'KeyboardInterrupt', 'LookupError', 'MemoryError', 'ModuleNotFoundError', 'NameError', 'None', 'NotADirectoryError', 'NotImplemented', 'NotImplementedError', 'OSError', 'OverflowError', 'PendingDeprecationWarning', 'PermissionError', 'ProcessLookupError', 'RecursionError', 'ReferenceError', 'ResourceWarning', 'RuntimeError', 'RuntimeWarning', 'StopAsyncIteration', 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError', 'SystemExit', 'TabError', 'TimeoutError', 'True', 'TypeError', 'UnboundLocalError', 'UnicodeDecodeError', 'UnicodeEncodeError', 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning', 'ValueError', 'Warning', 'ZeroDivisionError', '_', '__build_class__', '__debug__', '__doc__', '__import__', '__loader__', '__name__', '__package__', '__spec__', 'abs', 'all', 'any', 'ascii', 'bin', 'bool', 'breakpoint', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'compile', 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec', 'exit', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property', 'quit', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
+>>> 
