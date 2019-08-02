@@ -5,6 +5,7 @@ def init(self, x):
 
 
 self.val = x
+
 self.next = None
 
 
