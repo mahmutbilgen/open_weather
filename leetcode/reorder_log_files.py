@@ -31,7 +31,9 @@ logs[i] is guaranteed to have an identifier, and a word after the identifier.
 class Solution:
     aresult = []
 
+
     def reorderLogFiles(self, logs):
+
         """
         :type logs: List[str]
         :rtype: List[str]
@@ -47,22 +49,17 @@ class Solution:
 
         letters.sort(key=lambda x: x.split()[0])  # when suffix is tie, sort by identifier
         letters.sort(key=lambda x: x.split()[1:])  # sort by suffix
-        aresult = letters + digits  # put digit logs after letter logs
-
-        return aresult
-
-    def main(self):
-        pass
-
-    def print_list(self,a=0):
+        self.aresult = letters + digits  # put digit logs after letter logs
 
         for log in self.aresult:
             print(log)
-        return True
+        return self.aresult
+
+
 
 
 if __name__ == "__main__":
     logs = ["a1 9 2 3 1", "g1 act car", "zo4 4 7", "ab1 off key dog", "a8 act zoo"]
     sol = Solution().reorderLogFiles(logs)
     # sol.reorderLogFiles(logs)
-    sol.print_list(0)
+
