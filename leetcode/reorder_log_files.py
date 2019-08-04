@@ -31,7 +31,6 @@ logs[i] is guaranteed to have an identifier, and a word after the identifier.
 class Solution:
     aresult = []
 
-
     def reorderLogFiles(self, logs):
 
         """
@@ -54,9 +53,6 @@ class Solution:
         for log in self.aresult:
             print(log)
         return self.aresult
-
-
-
 
 if __name__ == "__main__":
     logs = ["a1 9 2 3 1", "g1 act car", "zo4 4 7", "ab1 off key dog", "a8 act zoo"]
