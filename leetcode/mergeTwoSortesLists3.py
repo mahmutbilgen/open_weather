@@ -25,33 +25,24 @@ class Solution:
     def __init__(self):
         pass
 
-    def mergeTwoLists(self, l1: ListNode, l2: ListNode):
-        # one of the list is empty
-        if l1 == None:
-            return l2
-        elif l2 == None:
-            return l1
-
-        head = ListNode(0)
-        headnode = head
-
-        while True:
-            if l1 == None:
-                headnode.next = l2
-                break
-            elif l2 == None:
-                headnode.next = l1
-                break
-
-            if l1.val <= l2.val:
-                headnode.next = l1
+    def mergeTwoLists(self, l1, l2):
+        if None in (l1, l2):
+            return l1 or l2
+        dummy = cur = ListNode(0)
+        dummy.next = l1
+        while l1 and l2:
+            if l1.val < l2.val:
+                cur.next = l1
                 l1 = l1.next
             else:
-                headnode.next = l2
-                l2 = l2.next
-            headnode = headnode.next
-
-        return head.next
+                # nxt = cur.next
+                cur.next = l2  # 1     similar to cur.next = l1
+                tmp = l2.next  # 2
+                # l2.next = nxt
+                l2 = tmp  # 3    (2, 3)similar to l1 = l1.next, you can write it with l2 = l2.next
+            cur = cur.next
+        cur.next = l1 or l2
+        return dummy.next
 
 if __name__=='__main__':
     l1=ListNode(1)
