@@ -31,10 +31,11 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 import logging
 import time
 
-#create logger
-logging.basicConfig(filename = "./problems.log",level = logging.DEBUG)
+# create logger
+logging.basicConfig(filename="./problems.log", level=logging.DEBUG)
 
 logger = logging.getLogger()
+
 
 def read_file_timed(path):
     """ Return the contents of the files at 'path' and measure time required."""
@@ -49,11 +50,11 @@ def read_file_timed(path):
     else:
         f.close()
     finally:
-    stop_time = time.time()
+        stop_time = time.time()
     dt = stop_time - start_time
     logger.info("Time required for {file}  = {time}".format(file=path, time=dt))
 
 
 # data  = read_file_timed("./audio_file.wav")   # No error
 
-data  = read_file_timed("./video_file.mov")  # 1.2 GB
+data = read_file_timed("./video_file.mov")  # 1.2 GB
